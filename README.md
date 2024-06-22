@@ -8,10 +8,8 @@
 - Git
 
 ### Clone the Repository
-```bash
-git clone <repository-url>
-cd <project-directory>
-```
+git clone https://github.com/jatin471/OnlineBookStore.git
+
 
 ## Build the Project
 ./gradlew build
