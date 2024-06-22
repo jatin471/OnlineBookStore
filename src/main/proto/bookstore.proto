@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package bookstore;
+
+message Book {
+  string isbn = 1;
+  string title = 2;
+  repeated string authors = 3;
+  int32 page_count = 4;
+}
+
+service BookService {
+  rpc AddBook (AddBookRequest) returns (AddBookResponse) {}
+  rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse) {}
+  rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse) {}
+  rpc GetBooks (GetBooksRequest) returns (GetBooksResponse) {}
+}
+
+message AddBookRequest {
+  Book book = 1;
+}
+
+message AddBookResponse {
+  string message = 1;
+}
+
+message UpdateBookRequest {
+  Book book = 1;
+}
+
+message UpdateBookResponse {
+  string message = 1;
+}
+
+message DeleteBookRequest {
+  string isbn = 1;
+}
+
+message DeleteBookResponse {
+  string message = 1;
+}
+
+message GetBooksRequest {}
+
+message GetBooksResponse {
+  repeated Book books = 1;
+}
